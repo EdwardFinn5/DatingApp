@@ -21,21 +21,21 @@ namespace DatingApp.API.Data
             {
                 return null;
             }
-            if (!VerifyPasswordHash(password, user.PasswprdHash, user.PasswordSalt))
+            if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
             {
                 return null;
             }
             return user;
         }
 
-        private bool VerifyPasswordHash(string password, byte[] passwprdHash, byte[] passwordSalt)
+        private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
             using( var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
             {
                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
                for (int i = 0; i < computedHash.Length; i++)
                {
-                   if (computedHash[i] != passwprdHash[i])
+                   if (computedHash[i] != passwordHash[i])
                    {
                        return false;
                    }
@@ -49,7 +49,7 @@ namespace DatingApp.API.Data
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
-            user.PasswprdHash = passwordHash;
+            user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
             await _context.Users.AddAsync(user);
