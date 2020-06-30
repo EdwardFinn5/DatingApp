@@ -1,9 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-  <img src="https://kentww.com/news/wp-content/uploads/2015/01/Iowa-College-Foundation-logo.png" height="40" width="120
-  " />
-  <!-- <img src="../../../Images/ICF_Logo.jpg" height="40" width="120
-  " /> -->
+  
   <div class="container">
+    <img src='../../assets/ICF_Logo.jpg' class="logo" height="50" width="50"/>
     <a class="navbar-brand" [routerLink]="['/home']">Talent Search</a>
 
     <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
@@ -22,6 +20,9 @@
     </ul>
 
     <div *ngIf="loggedIn()" class="dropdown" dropdown>
+      <span class="mr-1">
+        <img src="{{photoUrl}}" alt="">
+      </span>
       <a class="dropdown-toggle text-light" dropdownToggle>
         Welcome {{authService.decodedToken?.unique_name | titlecase}}
       </a>
