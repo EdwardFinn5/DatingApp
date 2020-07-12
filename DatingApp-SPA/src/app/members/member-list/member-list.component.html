@@ -1,5 +1,5 @@
 <div class="text-center mt-3">
-  <h2>Search for Talent:   {{pagination.totalItems}} Identified &nbsp; &nbsp; &nbsp; &nbsp; Order By:</h2> 
+  <h2>Search for Talent:   {{pagination.totalItems}} Identified &nbsp; Order By:&nbsp;</h2> 
 </div>
 
 <div class="container mt-3">
@@ -46,9 +46,9 @@
     <div class="col">
       <div class="btn-group float-right">
         <button type="button" name="orderBy" class="btn btn-primary" 
-          [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="college">College</button>
+          [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="college" style="margin-left: 10px">College</button>
         <button type="button" name="orderBy" class="btn btn-primary"
-          [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="created">When Added</button>
+          [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="created" style="margin-left: 10px" >When Added</button>
       </div>
     </div>
   

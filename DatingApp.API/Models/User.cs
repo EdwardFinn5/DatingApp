@@ -19,6 +19,9 @@ namespace DatingApp.API.Models
         public string Experiences { get; set; }
         public string Hometown { get; set; }
         public string College { get; set; }
+        public string Gender { get; set; }
         public ICollection<Photo> Photos { get; set; }
+        public ICollection<Like> Likers { get; set; }
+        public ICollection<Like> Likees { get; set; }
     }
 }
