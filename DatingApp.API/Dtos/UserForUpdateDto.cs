@@ -7,5 +7,6 @@ namespace DatingApp.API.Dtos
         public string Major { get; set; }
         public string Hometown { get; set; }
         public string College { get; set; }
+        public string Gender { get; set; }
     }
 }

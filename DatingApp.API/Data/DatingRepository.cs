@@ -59,24 +59,9 @@ namespace DatingApp.API.Data
 
             users = users.Where(u => u.Id != userParams.UserId);
 
-            users = users.Where(u => u.ClassYear == userParams.ClassYear);
+            users = users.Where(u => u.Gender == userParams.Gender);
 
-            users = users.Where(u => u.Major == userParams.Major);
-
-            if (userParams.Likers)
-            {
-                var userLikers = await GetUserLikes(userParams.UserId, userParams.Likers);
-                users = users.Where(u => userLikers.Contains(u.Id));
-            }
-
-            if (userParams.Likees)
-            {
-                var userLikees = await GetUserLikes(userParams.UserId, userParams.Likers);
-                users = users.Where(u => userLikees.Contains(u.Id));
-            }
-
-
-            if(userParams.MinAge != 18 || userParams.MaxAge != 99)
+            if (userParams.MinAge != 18 || userParams.MaxAge != 99)
             {
                 var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1);
                 var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
@@ -84,6 +69,25 @@ namespace DatingApp.API.Data
                 users = users.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
             }
 
+
+            // users = users.Where(u => u.ClassYear == userParams.ClassYear);
+
+            // users = users.Where(u => u.Major == userParams.Major);
+
+            // if (userParams.Likers)
+            // {
+            //     var userLikers = await GetUserLikes(userParams.UserId, userParams.Likers);
+            //     users = users.Where(u => userLikers.Contains(u.Id));
+            // }
+
+            // if (userParams.Likees)
+            // {
+            //     var userLikees = await GetUserLikes(userParams.UserId, userParams.Likers);
+            //     users = users.Where(u => userLikees.Contains(u.Id));
+            // }
+
+
+           
             if(!string.IsNullOrEmpty(userParams.OrderBy))
             {
                 switch (userParams.OrderBy)

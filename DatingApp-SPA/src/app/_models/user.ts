@@ -15,4 +15,5 @@ export interface User {
     experiences?: string;
     lookingFor?: string;
     photos?: Photo[];
+    gender: string;
 }

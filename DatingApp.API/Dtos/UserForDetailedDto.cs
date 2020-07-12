@@ -19,6 +19,7 @@ namespace DatingApp.API.Dtos
         public string Hometown { get; set; }
         public string College { get; set; } 
         public string PhotoUrl { get; set; }
+        public string Gender { get; set; }
         public ICollection<PhotosForDetailedDto> Photos { get; set; }
     }
 }
