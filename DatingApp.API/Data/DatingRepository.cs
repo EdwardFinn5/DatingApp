@@ -74,17 +74,17 @@ namespace DatingApp.API.Data
 
             // users = users.Where(u => u.Major == userParams.Major);
 
-            // if (userParams.Likers)
-            // {
-            //     var userLikers = await GetUserLikes(userParams.UserId, userParams.Likers);
-            //     users = users.Where(u => userLikers.Contains(u.Id));
-            // }
+            if (userParams.Likers)
+            {
+                var userLikers = await GetUserLikes(userParams.UserId, userParams.Likers);
+                users = users.Where(u => userLikers.Contains(u.Id));
+            }
 
-            // if (userParams.Likees)
-            // {
-            //     var userLikees = await GetUserLikes(userParams.UserId, userParams.Likers);
-            //     users = users.Where(u => userLikees.Contains(u.Id));
-            // }
+            if (userParams.Likees)
+            {
+                var userLikees = await GetUserLikes(userParams.UserId, userParams.Likers);
+                users = users.Where(u => userLikees.Contains(u.Id));
+            }
 
 
            

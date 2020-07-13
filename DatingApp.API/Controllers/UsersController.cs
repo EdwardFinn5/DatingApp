@@ -81,7 +81,7 @@ namespace DatingApp.API.Controllers
             throw new Exception($"Updating user with {id} failed on save");
         }
 
-        [HttpPost("{id}/Like/{recipientId}")]
+        [HttpPost("{id}/like/{recipientId}")]
         public async Task<IActionResult> LikeUser(int id, int recipientId)
         {
              if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
@@ -111,7 +111,7 @@ namespace DatingApp.API.Controllers
                 return Ok();     
             }
 
-            return BadRequest("Failed to indicate student's good fit");  // if Like fails to be saved
+            return BadRequest("Failed to indicate student is a good fit");  // if Like fails to be saved
         }
     }
 }

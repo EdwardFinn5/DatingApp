@@ -20,7 +20,7 @@ namespace DatingApp.API.Helpers
         // public string Major { get; set; } 
         public string OrderBy { get; set; }
         
-        // public bool Likees { get; set; } = false;  // set to false by defaulat
-        // public bool Likers { get; set; } = false;  // set to false by defaulat
+        public bool Likees { get; set; } = false;  // set to false by defaulat
+        public bool Likers { get; set; } = false;  // set to false by defaulat
     }
 }
