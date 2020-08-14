@@ -36,7 +36,7 @@ export class PhotoEditorComponent implements OnInit {
       url: this.baseUrl + 'users/' + this.authService.decodedToken.nameid + '/photos',
       authToken: 'Bearer ' + localStorage.getItem('token'),
       isHTML5: true,
-      allowedFileType: ['image'], 
+      allowedFileType: ['image'],
       removeAfterUpload: true,
       autoUpload: false,
       maxFileSize: 10 * 1024 * 1024

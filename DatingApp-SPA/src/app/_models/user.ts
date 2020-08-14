@@ -7,7 +7,7 @@ export interface User {
     age: number;
     classYear: string;
     created: Date;
-    lastActive: Date;
+    lastActive: any;
     photoUrl: string;
     hometown: string;
     college: string;
