@@ -1,4 +1,4 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/e7b5980d-9057-4ba0-9cd1-a6fa328a7e41/resourceGroups/angularicf/providers/Microsoft.Web/sites/icfapp",
+    "appService.defaultWebAppToDeploy": "",
     "appService.deploySubpath": "DatingApp.API\\bin\\Release\\netcoreapp3.1\\publish"
 }

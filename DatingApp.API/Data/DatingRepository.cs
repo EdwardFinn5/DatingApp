@@ -60,18 +60,9 @@ namespace DatingApp.API.Data
 
             users = users.Where(u => u.Gender == userParams.Gender);
 
-            if (userParams.MinAge != 18 || userParams.MaxAge != 99)
-            {
-                var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1);
-                var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
+            users = users.Where(u => u.ClassYear == userParams.ClassYear);  
 
-                users = users.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
-            }
-
-
-            // users = users.Where(u => u.ClassYear == userParams.ClassYear);
-
-            // users = users.Where(u => u.Major == userParams.Major);
+            users = users.Where(u => u.Major == userParams.Major);
 
             if (userParams.Likers)
             {
@@ -119,7 +110,7 @@ namespace DatingApp.API.Data
                     return user.Likees.Where(u => u.LikerId == id).Select(i => i.LikeeId);
                 }
         }
-
+ 
         public async Task<bool> SaveAll()
         {
             return await _context.SaveChangesAsync() > 0;

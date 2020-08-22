@@ -1,22 +1,22 @@
 <div class="text-center mt-3">
-  <h2>Search for Talent:   {{pagination.totalItems}} Identified &nbsp; Order By:&nbsp;</h2> 
+  <h2>Search for Talent:   {{pagination.totalItems}} Identified &nbsp; Order By:&nbsp;</h2>
 </div>
 
 <div class="container mt-3">
 
   <form class="form-inline" #form="ngForm" (ngSubmit)="loadUsers()"  novalidate>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="minAge">Age From</label>
       <input type="number" class="form-control ml-1" style="width: 70px" id="minAge"
         [(ngModel)]="userParams.minAge" name="minAge">
     </div>
-  
+
     <div class="form-group px-2">
       <label for="maxAge">Age To</label>
       <input type="number" class="form-control ml-1" style="width: 70px" id="maxAge"
         [(ngModel)]="userParams.maxAge" name="maxAge">
     </div>
-  
+
     <div class="form-group px-2">
       <label for="gender">Show: </label>
       <select class="form-control ml-1" style="width: 130px" id="gender"
@@ -25,9 +25,19 @@
           {{gender.display}}
       </option>
       </select>
+    </div> -->
+
+    <div class="form-group">
+      <label for="major">Choose Major: </label>
+      <select class="form-control ml-1" style="width: 130px" id="major"
+        [(ngModel)]="userParams.major" name="major">
+        <option *ngFor="let major of majorList" [value]="major.value">
+            {{major.display}}
+        </option>
+      </select>
     </div>
 
-    <!-- <div class="form-group px-2">
+    <div class="form-group px-2">
       <label for="classYear">Choose Class Year: </label>
       <select class="form-control ml-1" style="width: 130px" id="classYear"
         [(ngModel)]="userParams.classYear" name="classYear">
@@ -37,31 +47,19 @@
       </select>
     </div>
 
-    <div class="form-group px-2">
-      <label for="major">Choose Major: </label>
-      <select class="form-control ml-1" style="width: 130px" id="major"
-        [(ngModel)]="userParams.major" name="major">
-        <option *ngFor="let major of majorList" [value]="major.value">
-            {{major.display}}
-        </option>
-      </select>
-    </div> -->
-    
-    
-    
     <button type="submit" class="btn btn-primary" style="margin-left:10px">Apply Filters</button>
     <button type="button" class="btn btn-info" (click)="resetFilters()" style="margin-left:10px">Reset Filter</button>
 
-        
+
     <div class="col">
       <div class="btn-group float-right">
-        <button type="button" name="orderBy" class="btn btn-primary" 
+        <button type="button" name="orderBy" class="btn btn-primary"
           [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="college" style="margin-left: 10px">College</button>
         <button type="button" name="orderBy" class="btn btn-primary"
           [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="created" style="margin-left: 10px" >When Added</button>
       </div>
     </div>
-  
+
   </form>
   <br>
 
@@ -74,7 +72,7 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <pagination [boundaryLinks]="true" 
+  <pagination [boundaryLinks]="true"
               [totalItems]="pagination.totalItems"
               [itemsPerPage]="pagination.itemsPerPage"
               [(ngModel)]="pagination.currentPage"
