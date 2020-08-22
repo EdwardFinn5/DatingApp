@@ -99,7 +99,7 @@ namespace DatingApp.API.Data
             var user = await _context.Users
                 // .Include(x => x.Likers)
                 // .Include(x => x.Likees)
-                .FirstOrDefaultAsync(u => u.Id == id);
+                 .FirstOrDefaultAsync(u => u.Id == id);
 
                 if (likers)
                 {

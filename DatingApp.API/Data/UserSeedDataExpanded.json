@@ -23,7 +23,7 @@
   },
   {
     "Username": "Dorothy",
-    "ClassYear": "Freshman",
+    "ClassYear": "Senior",
     "DateOfBirth": "1979-04-19",
     "Password": "password",
     "KnownAs": "Dorothy",
@@ -227,7 +227,7 @@
     "KnownAs": "George",
     "Created": "2017-08-02",
     "LastActive": "2017-08-02",
-    "Major": "Finance",
+    "Major": "Accounting",
     "LookingFor": "Non do nostrud voluptate cupidatat et proident enim labore voluptate incididunt labore. Incididunt consectetur dolor proident nulla tempor et ipsum anim duis aute commodo duis. Est ullamco fugiat velit exercitation sunt enim duis nisi laborum culpa. Magna reprehenderit excepteur commodo nisi ullamco pariatur laboris. Ullamco fugiat eiusmod veniam duis elit. Cupidatat non occaecat consectetur sunt qui anim. In commodo in deserunt et veniam ad nulla.\r\n",
     "Experiences": "Dolore nisi eiusmod ut irure ullamco nulla dolore est sit tempor quis.",
     "Hometown": "Cedar Rapids",
@@ -397,7 +397,7 @@
   },
   {
     "Username": "Joe",
-    "ClassYear": "Freshman",
+    "ClassYear": "Senior",
     "DateOfBirth": "1969-08-15",
     "Password": "password",
     "KnownAs": "Joe",
